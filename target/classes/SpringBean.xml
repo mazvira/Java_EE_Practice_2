@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloBean" class="com.mazurkevych.HelloWorld">
+        <property name="name" value="Vira"/>
+    </bean>
+
+    <bean id="superHero" class="com.mazurkevych.SuperHero">
+        <constructor-arg ref="power"/>
+        <property name="quests">
+            <list>
+                <ref bean="feat1"/>
+                <ref bean="feat2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="power" class="com.mazurkevych.Power">
+        <property name="nameOfPower" value="Save lives"/>
+    </bean>
+
+    <bean id="feat1" class="com.mazurkevych.Feat1">
+        <property name="nameOfFeat" value="Feat1"/>
+    </bean>
+
+    <bean id="feat2" class="com.mazurkevych.Feat2">
+        <property name="nameOfFeat" value="Feat2"/>
+    </bean>
+
+</beans>
